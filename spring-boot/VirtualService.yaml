@@ -18,7 +18,7 @@ spec:
         host: rollout-bluegreen-active
         port:
           number: 6789
-    - destination:
-        host: rollout-bluegreen-preview
-        port:
-          number: 6789
+    # - destination:
+    #     host: rollout-bluegreen-preview
+    #     port:
+    #       number: 6789

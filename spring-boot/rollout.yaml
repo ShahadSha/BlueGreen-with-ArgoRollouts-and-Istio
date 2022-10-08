@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollout-bluegreen
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rollout-bluegreen
+  template:
+    metadata:
+      labels:
+        app: rollout-bluegreen
+    spec:
+      containers:
+      - name: superapi
+        image: shahadsha/hello-world:35
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 6789
+  strategy:
+    blueGreen:
+      activeService: rollout-bluegreen-active
+      previewService: rollout-bluegreen-preview
+      autoPromotionEnabled: false
+
+      trafficRouting:
+        istio:
+          virtualService:
+            name: springboot-vs  # required
+            routes:
+            - primary   
+

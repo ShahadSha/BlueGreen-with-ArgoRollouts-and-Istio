@@ -1,0 +1,31 @@
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: somegateway
+  namespace: somenamespace
+spec:
+  servers:
+    - hosts:
+        - dummy.example.com
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+  selector:
+    istio: ingressgateway
+---
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: somegateway-canary
+  namespace: somenamespace
+spec:
+  servers:
+    - hosts:
+        - dummy-canary.example.com
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+  selector:
+    istio: ingressgateway

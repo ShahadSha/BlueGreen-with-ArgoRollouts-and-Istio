@@ -30,9 +30,10 @@ spec:
       previewService: rollout-bluegreen-preview
       autoPromotionEnabled: false
 
-      trafficRouting:
-        istio:
-          virtualService:
-            name: springboot-vs  # required
-            
+      # trafficRouting:
+      #   istio:
+      #     virtualService:
+      #       name: springboot-vs  # required
+      #       routes:
+      #       - primary   
 

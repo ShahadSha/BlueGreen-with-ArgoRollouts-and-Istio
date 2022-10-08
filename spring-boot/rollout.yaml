@@ -29,7 +29,7 @@ spec:
       activeService: rollout-bluegreen-active
       previewService: rollout-bluegreen-preview
       autoPromotionEnabled: false
-
+      
       trafficRouting:
         istio:
           virtualService:

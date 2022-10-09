@@ -6,8 +6,10 @@ metadata:
 spec:
   project: default
   source:
+    chart: springboot
+    targetRevision: 1.16.0
     repoURL: https://github.com/ShahadSha/BG-with-ArgoRollouts-and-Istio.git
-    targetRevision: HEAD
+    # targetRevision: HEAD
     path: springboot/templates
   destination: 
     server: https://kubernetes.default.svc

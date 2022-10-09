@@ -11,7 +11,7 @@ spec:
     path: test
   destination: 
     server: https://kubernetes.default.svc
-    namespace: spring-boot
+    namespace: springboot
 
   syncPolicy:
     syncOptions:

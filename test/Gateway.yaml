@@ -2,14 +2,13 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: springboot-gateway
-  namespace: spring-boot
 spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 6789
-      name: tcp
-      protocol: TCP
+      number: 80
+      name: http
+      protocol: HTTP
     hosts:
-    - "*" 
+    - "*"

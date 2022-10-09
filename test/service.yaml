@@ -2,22 +2,31 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
+  namespace: springboot
 spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - protocol: TCP
+  - name: http
     port: 6789
-    targetPort: 6789
+    protocol: TCP
+    targetPort: http
+  sessionAffinity: None
+  type: ClusterIP
+
 ---
 kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
+  namespace: springboot
 spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - protocol: TCP
+  - name: http
     port: 6789
-    targetPort: 6789
+    protocol: TCP
+    targetPort: http
+  sessionAffinity: None
+  type: ClusterIP

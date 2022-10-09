@@ -2,23 +2,18 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: springboot-vs
+  namespace: springboot
 spec:
   hosts:
   - "*"
   gateways:
   - springboot-gateway
-  
   http:
-
   - match:
     - uri:
-        prefix: /hello
+        prefix: /home
     route:
     - destination:
-        host: rollout-bluegreen-active
+        host: productpage
         port:
           number: 6789
-    # - destination:
-    #     host: rollout-bluegreen-preview
-    #     port:
-    #       number: 6789

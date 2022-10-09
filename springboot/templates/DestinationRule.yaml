@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: bluegreen-dg
+spec:
+  host: bluegreen #service name
+  subsets:
+  - name: green
+    labels:
+      app: rollout-bluegreen-preview
+  - name: blue
+    labels:
+      app: rollout-bluegreen-preview

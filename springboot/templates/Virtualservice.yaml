@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: rollout-vsvc
+spec:
+  gateways:
+  - istio-rollout-gateway
+  hosts:
+  - istio-rollout.dev.argoproj.io
+  http:
+  - name: primary        # referenced in canary.trafficRouting.istio.virtualService.routes
+     route:
+    - destination:
+        host: rollout-bluegreen-preview # Service name
+        subset: blue #subset declared in DestinationRule
+        port:
+          number: 6789
+      weight: 70
+    - destination:
+        host: rollout-bluegreen-active # Service name
+        subset: green #subset declared in DestinationRule
+        port:
+          number: 6789
+      weight: 30

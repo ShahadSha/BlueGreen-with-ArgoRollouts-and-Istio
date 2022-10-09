@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ShahadSha/BG-with-ArgoRollouts-and-Istio.git
     targetRevision: HEAD
-    path: springboot
+    path: springboot/templates
   destination: 
     server: https://kubernetes.default.svc
     namespace: springboot

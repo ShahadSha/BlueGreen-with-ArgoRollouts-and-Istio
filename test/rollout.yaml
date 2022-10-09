@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: superapi
-        image: shahadsha/hello-world:31
+        image: shahadsha/hello-world:30
         resources:
           requests:
             memory: "128Mi"

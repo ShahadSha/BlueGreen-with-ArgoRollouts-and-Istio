@@ -12,7 +12,7 @@ spec:
     protocol: TCP
     targetPort: http
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
 
 ---
 kind: Service
@@ -29,4 +29,4 @@ spec:
     protocol: TCP
     targetPort: http
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort

@@ -4,7 +4,7 @@ metadata:
   name: rollout-bluegreen
   namespace: springboot
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: rollout-bluegreen

@@ -11,7 +11,7 @@ spec:
     port: 6789
     protocol: TCP
     targetPort: http
-  type: NodePort
+  type: ClusterIP
 
 ---
 kind: Service
@@ -27,4 +27,4 @@ spec:
     port: 6789
     protocol: TCP
     targetPort: http
-  type: NodePort
+  type: ClusterIP

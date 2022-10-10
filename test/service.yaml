@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
-  namespace: springboot
+  namespace: springboot2
 spec:
   selector:
     app: rollout-bluegreen
@@ -18,7 +18,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
-  namespace: springboot
+  namespace: springboot2
 spec:
   selector:
     app: rollout-bluegreen

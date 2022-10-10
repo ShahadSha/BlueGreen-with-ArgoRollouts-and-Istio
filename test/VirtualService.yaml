@@ -11,9 +11,9 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /home
+        prefix: /hello
     route:
     - destination:
-        host: kubernetes.default.svc
+        host: rollout-bluegreen-active
         port:
           number: 6789

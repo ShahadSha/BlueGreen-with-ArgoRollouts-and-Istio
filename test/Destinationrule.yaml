@@ -3,7 +3,7 @@ kind: DestinationRule
 metadata:
   name: springboot-home
 spec:
-  host: ratings.prod.svc.cluster.local
+  host: kubernetes.default.svc
   trafficPolicy:
     loadBalancer:
       simple: LEAST_REQUEST

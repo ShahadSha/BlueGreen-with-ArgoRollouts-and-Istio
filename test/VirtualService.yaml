@@ -8,9 +8,14 @@ spec:
   - "*"
   gateways:
   - springboot-gateway
-  http:    
-    - route:
-      - destination:
-          host: "rollout-bluegreen-active.springboot.svc.cluster.local"
-          port:
-            number: 6789
+  http:  
+  - match:
+    - uri:
+        exact: /hello
+    - uri:
+        prefix: /hello  
+    route:
+    - destination:
+        host: "rollout-bluegreen-active.springboot.svc.cluster.local"
+        port:
+          number: 6789

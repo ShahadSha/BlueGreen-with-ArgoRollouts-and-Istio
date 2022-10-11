@@ -7,11 +7,9 @@ spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - name: http
-    port: 6789
-    protocol: TCP
-    targetPort: http
-  type: ClusterIP
+  - port: 6789
+    targetPort: 6789
+  type: NodePort
 
 ---
 kind: Service
@@ -23,8 +21,6 @@ spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - name: http
-    port: 6789
-    protocol: TCP
-    targetPort: http
-  type: ClusterIP
+  - port: 6789
+    targetPort: 6789
+  type: NodePort

@@ -8,7 +8,7 @@ spec:
     app: rollout-bluegreen
   ports:
   - port: 6789
-    targetPort: 6789
+    protocol: TCP
   type: NodePort
 
 ---
@@ -22,5 +22,6 @@ spec:
     app: rollout-bluegreen
   ports:
   - port: 6789
-    targetPort: 6789
+    protocol: TCP
   type: NodePort
+

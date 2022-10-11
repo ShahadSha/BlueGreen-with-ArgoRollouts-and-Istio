@@ -17,13 +17,6 @@ spec:
       - name: hello-world
         image: shahadsha/hello-world:34
         imagePullPolicy: IfNotPresent
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "50m"
-          limits:
-            memory: "128Mi"
-            cpu: "50m"
         ports:
         - containerPort: 6789
   strategy:

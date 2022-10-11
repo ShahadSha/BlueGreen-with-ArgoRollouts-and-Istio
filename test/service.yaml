@@ -9,6 +9,7 @@ spec:
   ports:
   - name: http
     port: 6789
+    targetPort: 6789
     protocol: TCP
   type: NodePort
 
@@ -24,5 +25,6 @@ spec:
   ports:
   - name: http
     port: 6789
+    targetPort: 6789
     protocol: TCP
   type: NodePort

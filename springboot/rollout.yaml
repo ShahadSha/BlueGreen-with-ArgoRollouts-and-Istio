@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: public.ecr.aws/x3x3m9h6/springboot:16
+        image: public.ecr.aws/x3x3m9h6/springboot:17
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 6789
